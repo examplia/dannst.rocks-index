@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dannst | TC2 Gaming</title>
+
+  <!-- Open Graph / Discord Embed -->
+  <meta property="og:title" content="Dannst | TC2 Gaming" />
+  <meta property="og:description" content="TC2 videos, guides, and gameplay by Dannst." />
+  <meta property="og:image" content="https://dannst.rocks/assets/channels4_banner.jpg" />
+  <meta property="og:url" content="https://dannst.rocks" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/channels4_profile.jpg" type="image/jpeg" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            orange: "#f28c38",
+            dark: "#1a1a1a",
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Animations -->
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-dark text-white font-sans">
+
+  <!-- Hero -->
+  <header class="relative w-full h-64 md:h-96 flex items-center justify-center text-center">
+    <img src="assets/channels4_banner.jpg" alt="Banner" class="absolute inset-0 w-full h-full object-cover opacity-50" />
+    <div class="relative z-10 fade-in-up">
+      <img src="assets/channels4_profile.jpg" alt="Avatar"
+           class="mx-auto rounded-full border-4 border-orange w-32 h-32 mb-4 shadow-lg" />
+      <h1 class="text-4xl md:text-5xl font-bold text-orange">Dannst</h1>
+      <p class="text-lg md:text-xl">TC2 Gaming • 2.1K+ Subscribers</p>
+      <div class="mt-4 flex justify-center gap-4">
+        <a href="https://www.youtube.com/channel/UCYLjsfhkcebx4B-DhNDTqUw" target="_blank"
+           class="bg-orange hover:bg-white hover:text-dark text-dark font-bold py-2 px-4 rounded-lg transition">
+          YouTube
+        </a>
+        <a href="https://discord.gg/qV5Z7yatRZ" target="_blank"
+           class="bg-orange hover:bg-white hover:text-dark text-dark font-bold py-2 px-4 rounded-lg transition">
+          Discord
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Videos Section -->
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold text-orange mb-8 text-center">Featured Videos</h2>
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Each video card -->
+      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform">
+        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/hBJUL8DZm-w" allowfullscreen></iframe>
+        <p class="p-4 font-semibold">[TC2] The BEST SHOTGUN in the Game (1K Sub Special)</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform">
+        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/X52MdYiqPlQ" allowfullscreen></iframe>
+        <p class="p-4 font-semibold">What Happened?</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform">
+        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/SHNyRuVDOI0" allowfullscreen></iframe>
+        <p class="p-4 font-semibold">Update.</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform">
+        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/5r3RtXVhqqs" allowfullscreen></iframe>
+        <p class="p-4 font-semibold">Fire Anaurky.</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform">
+        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/_lDzOQL864k" allowfullscreen></iframe>
+        <p class="p-4 font-semibold">Keep Ice Banned</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform">
+        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/uzmcjSLn674" allowfullscreen></iframe>
+        <p class="p-4 font-semibold">[TC2] Is the Cold Shoulder THAT BAD?</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform">
+        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/ZR5QF3Dbu_s" allowfullscreen></iframe>
+        <p class="p-4 font-semibold">[TC2] The UNDERESTIMATED power of the Sub Shotgun</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform">
+        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/b-Kk2twkv_U" allowfullscreen></iframe>
+        <p class="p-4 font-semibold">[TC2] The core (Un)balance of the Axtinguisher</p>
+      </div>
+      <div class="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition transform">
+        <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/MXbeYS2w45M" allowfullscreen></iframe>
+        <p class="p-4 font-semibold">[TC2] How does ONE use the Shotgun Cannon?</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-gray-400 text-center py-6 mt-12">
+    <p>© 2025 Dannst.rocks — Fan site made by @oxxywozz</p>
+  </footer>
+</body>
+</html>
