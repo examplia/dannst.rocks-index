@@ -1,111 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dannst Rocks</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Open Graph / Discord Embed -->
+  <meta property="og:title" content="Dannst Rocks" />
+  <meta property="og:description" content="TC2 videos, guides, and gameplay by Dannst." />
+  <meta property="og:image" content="https://dannst.rocks/assets/channels4_banner.jpg" />
+  <meta property="og:url" content="https://dannst.rocks" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#f28c38" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/channels4_profile.jpg" type="image/jpeg" />
+
+  <!-- Tailwind (CDN is fine on GH Pages) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { dannst: "#f28c38", page: "#0b0b0c" },
+          boxShadow: {
+            glow: "0 0 40px rgba(242,140,56,0.25)",
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Glassmorphism + aspect-ratio + animations -->
   <style>
-    body {
-      background: linear-gradient(to bottom right, #0d0d0d, #1a1a1a);
-      color: #f5f5f5;
-      font-family: 'Inter', sans-serif;
-    }
     .glass {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
     }
-    .btn {
-      @apply px-4 py-2 rounded-xl font-semibold shadow-lg transition transform hover:scale-105;
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 */
+      overflow: hidden;
+      border-radius: 14px;
     }
-    .btn-orange {
-      background: #ff6600;
-      color: #fff;
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
-    .btn-orange:hover {
-      background: #e65c00;
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-    .shadow-glow {
-      box-shadow: 0 0 20px rgba(255, 102, 0, 0.6);
-    }
+    .fade-up { animation: fadeUp 0.6s ease-out both; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col items-center">
+<body class="bg-page text-white antialiased">
 
-  <!-- Banner -->
-  <header class="w-full relative">
-    <img src="./assets/channels4_banner.jpg" alt="Dannst banner" class="w-full h-52 md:h-64 object-cover">
-    <div class="absolute left-6 bottom-0 flex items-center space-x-4">
-      <img src="./assets/channels4_profile.jpg" alt="Dannst avatar"
-           class="w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-orange-500 shadow-glow object-cover relative -top-10">
-      <h1 class="text-3xl md:text-4xl font-bold">Dannst Rocks</h1>
+  <!-- HERO -->
+  <header class="relative w-full h-[260px] md:h-[360px] overflow-hidden">
+    <img src="./assets/channels4_banner.jpg" alt="Dannst banner"
+         class="absolute inset-0 w-full h-full object-cover opacity-60">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/30 to-black/70"></div>
+
+    <div class="relative max-w-6xl mx-auto h-full px-6 flex items-end pb-6">
+      <div class="flex flex-col md:flex-row md:items-end gap-5 w-full">
+        <div class="-mb-10 md:-mb-12">
+          <img src="./assets/channels4_profile.jpg" alt="Dannst avatar"
+               class="w-28 h-28 md:w-36 md:h-36 rounded-full border-4 border-dannst shadow-glow object-cover">
+        </div>
+        <div class="md:pb-2">
+          <h1 class="text-3xl md:text-4xl font-extrabold text-dannst drop-shadow">Dannst Rocks</h1>
+          <p class="text-sm md:text-base text-white/80 mt-1">TC2 Gaming • <span id="subCount">—</span> subscribers</p>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="https://discord.gg/qV5Z7yatRZ" target="_blank"
+               class="glass shadow-glow hover:shadow-lg hover:shadow-dannst/20 text-white px-4 py-2 rounded-xl transition">
+              Join Discord
+            </a>
+            <a href="https://www.youtube.com/channel/UCYLjsfhkcebx4B-DhNDTqUw" target="_blank"
+               class="bg-dannst text-black font-semibold px-4 py-2 rounded-xl hover:opacity-90 transition">
+              YouTube Channel
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- Buttons -->
-  <div class="flex space-x-4 mt-6">
-    <a href="https://discord.gg/qV5Z7yatRZ" target="_blank" class="btn btn-orange">Join Discord</a>
-    <a href="https://www.youtube.com/channel/UCYLjsfhkcebx4B-DhNDTqUw" target="_blank" class="btn glass">YouTube Channel</a>
-  </div>
+  <!-- CONTENT -->
+  <main class="max-w-6xl mx-auto px-6 pb-16">
 
-  <!-- Latest Video -->
-  <section class="mt-10 w-full max-w-4xl px-4">
-    <h2 class="text-2xl font-semibold mb-4">Latest Video</h2>
-    <div id="latest-video" class="aspect-video rounded-xl overflow-hidden shadow-glow"></div>
-  </section>
+    <!-- FEATURED / LATEST -->
+    <section class="mt-16">
+      <div class="glass rounded-2xl p-5 md:p-7 shadow-glow fade-up">
+        <h2 class="text-xl md:text-2xl font-bold text-dannst mb-4">Latest Video</h2>
+        <div id="latestVideo" class="video-wrap bg-black/40"></div>
+      </div>
+    </section>
 
-  <!-- Recent Videos -->
-  <section class="mt-12 w-full max-w-6xl px-4">
-    <h2 class="text-2xl font-semibold mb-6">Recent Videos</h2>
-    <div id="video-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-  </section>
+    <!-- GALLERY -->
+    <section class="mt-10">
+      <div class="glass rounded-2xl p-5 md:p-7 shadow-glow fade-up">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl md:text-2xl font-bold text-dannst">Recent Uploads</h2>
+          <span class="text-white/60 text-sm">Auto-updating • shows latest 8</span>
+        </div>
+        <div id="videoGrid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"></div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center mt-14 text-white/50">
+      © <span id="year"></span> Dannst.rocks — fan site for the TC2 community.
+    </footer>
+  </main>
 
   <script>
-    const API_KEY = "AIzaSyBK9MnL31-me4ud0bHfPooJd-uo3tPwwPc";
-    const CHANNEL_ID = "UCYLjsfhkcebx4B-DhNDTqUw";
-    const videoGrid = document.getElementById("video-grid");
-    const latestVideo = document.getElementById("latest-video");
+    // ---- CONFIG ----
+    const API_KEY     = "AIzaSyBK9MnL31-me4ud0bHfPooJd-uo3tPwwPc";
+    const CHANNEL_ID  = "UCYLjsfhkcebx4B-DhNDTqUw";
+    const SHOW_COUNT  = 9; // 1 featured + 8 in grid
 
-    async function fetchVideos() {
+    // ---- FALLBACK (your provided 9 videos) ----
+    const FALLBACK = [
+      { id: "hBJUL8DZm-w", title: "[TC2] The BEST SHOTGUN in the Game (1K Sub Special)" },
+      { id: "X52MdYiqPlQ", title: "What Happened?" },
+      { id: "SHNyRuVDOI0", title: "Update." },
+      { id: "5r3RtXVhqqs", title: "Fire Anaurky." },
+      { id: "_lDzOQL864k", title: "Keep Ice Banned" },
+      { id: "uzmcjSLn674", title: "[TC2] Is the Cold Shoulder THAT BAD?" },
+      { id: "ZR5QF3Dbu_s", title: "[TC2] The UNDERESTIMATED power of the Sub Shotgun" },
+      { id: "b-Kk2twkv_U", title: "[TC2] The core (Un)balance of the Axtinguisher" },
+      { id: "MXbeYS2w45M", title: "[TC2] How does ONE use the Shotgun Cannon?" },
+    ];
+
+    // ---- DOM helpers ----
+    const byId = id => document.getElementById(id);
+    byId("year").textContent = new Date().getFullYear();
+
+    function renderFeatured(videoId) {
+      byId("latestVideo").innerHTML = `
+        <iframe
+          src="https://www.youtube.com/embed/${videoId}"
+          title="Latest video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      `;
+    }
+
+    function renderGrid(items) {
+      const html = items.map(v => `
+        <div class="group">
+          <div class="video-wrap bg-black/40 ring-1 ring-white/5 group-hover:ring-dannst/40 transition">
+            <iframe
+              src="https://www.youtube.com/embed/${v.id}"
+              title="${v.title.replace(/"/g, '&quot;')}"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+          <div class="mt-2 text-sm text-white/90 line-clamp-2">${v.title}</div>
+        </div>
+      `).join("");
+      byId("videoGrid").innerHTML = html;
+    }
+
+    function useFallback() {
+      const [first, ...rest] = FALLBACK;
+      renderFeatured(first.id);
+      renderGrid(rest.slice(0, 8));
+      byId("subCount").textContent = "2,140+"; // approximate fallback
+    }
+
+    // ---- Live fetch ----
+    async function init() {
       try {
-        const res = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=9`
+        // 1) Subscribers
+        const statsRes = await fetch(
+          `https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${CHANNEL_ID}&key=${API_KEY}`
         );
-        const data = await res.json();
-        const videos = data.items.filter(item => item.id.kind === "youtube#video");
+        if (!statsRes.ok) throw new Error("stats request failed");
+        const statsJson = await statsRes.json();
+        const subs = statsJson?.items?.[0]?.statistics?.subscriberCount;
+        if (subs) byId("subCount").textContent = Number(subs).toLocaleString();
 
-        if (videos.length > 0) {
-          // Latest video embed
-          const first = videos[0];
-          latestVideo.innerHTML = `
-            <iframe class="w-full h-full" src="https://www.youtube.com/embed/${first.id.videoId}" 
-              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen></iframe>
-          `;
+        // 2) Latest N videos (order by date)
+        const searchRes = await fetch(
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${CHANNEL_ID}&order=date&maxResults=${SHOW_COUNT}&type=video&key=${API_KEY}`
+        );
+        if (!searchRes.ok) throw new Error("search request failed");
+        const searchJson = await searchRes.json();
 
-          // Grid of other recent videos
-          videos.slice(1).forEach(video => {
-            const card = document.createElement("div");
-            card.className = "glass rounded-xl overflow-hidden shadow-lg hover:scale-105 transform transition";
-            card.innerHTML = `
-              <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/${video.id.videoId}" 
-                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
-              <div class="p-3">
-                <h3 class="font-semibold text-lg">${video.snippet.title}</h3>
-              </div>
-            `;
-            videoGrid.appendChild(card);
-          });
-        }
-      } catch (err) {
-        console.error("Error fetching videos:", err);
+        const vids = (searchJson.items || []).map(it => ({
+          id: it.id.videoId,
+          title: it.snippet.title
+        })).filter(v => !!v.id);
+
+        if (!vids.length) throw new Error("no videos returned");
+
+        // 3) Render featured + grid (embed iframes)
+        const [featured, ...rest] = vids;
+        renderFeatured(featured.id);
+        renderGrid(rest.slice(0, 8));
+      } catch (e) {
+        console.warn("Falling back due to error:", e);
+        useFallback();
       }
     }
 
-    fetchVideos();
+    init();
   </script>
-
 </body>
 </html>
